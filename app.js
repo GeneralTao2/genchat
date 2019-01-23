@@ -16,6 +16,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.set('debug', config.IS_PRODUCTION);
 
+
 mongoose.connection
   .on('error', error => console.log(error))
   .on('close', () => console.log('Database connection closed.'))
@@ -25,7 +26,8 @@ mongoose.connection
     //require('./mocks')();
   });﻿
 
-mongoose.connect(config.MONGO_URL/*, {useMongoClient: true}*/, {useNewUrlParser: true});
+mongoose.connect(config.MONGO_URL/*, {useMongoClient: true}*//*, {useNewUrlParser: true}*/);
+
 
 //Express--------------------------------------------------
 const app = express();
