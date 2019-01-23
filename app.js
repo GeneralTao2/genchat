@@ -26,7 +26,7 @@ mongoose.connection
     //require('./mocks')();
   });﻿
 
-mongoose.connect('mongodb://GeneralTao:w725704@ds163984.mlab.com:63984/gentaodb'/*, {useMongoClient: true}*/, {useNewUrlParser: true});
+mongoose.connect(config.MONGO_URL/*, {useMongoClient: true}*/, {useNewUrlParser: true});
 
 
 //Express--------------------------------------------------
