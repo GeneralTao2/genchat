@@ -1,0 +1,119 @@
+ mkdir blog
+ git init
+ yarn init -y
+ {eslint - проверка на ошибки}
+ yarn add -D eslint eslint-plugin-node
+ {-D - dependences (зависимости)} - не работает !!!
+
+ w3201416725704@
+
+
+ <!-- href="/create">Add</a>
+ <ul>
+   <% posts.forEach(function(post){ %>
+       <li>
+         <b><%= post.title %></b>
+         <br>
+         <%= post.body %>
+       </li>
+   <% }); %>
+ </ul> -->
+
+#0###########################################################
+/*models.post.find({})
+.skip(perPage * page - perPage)
+.limit(perPage)
+.populate('owner')
+.sort({ createdAt: -1 })
+.then(posts => {
+  models.post.count().then(count => {
+    res.render('archive/index', {
+      posts,
+      current: page,
+      pages: Math.ceil(count / perPage),
+      user: {
+        id: userId,
+        login: userLogin
+      }
+    });
+  })
+  .catch(() => {
+    throw new Error('Server Error')
+  })
+})
+}*/
+
+ ###1###################################################################
+ /*models.post.findOne({
+   url
+ })
+ .populate('owner')
+ .then(post => {
+   console.log(post);
+   if(!post) {
+     const err = new Error('Not Found');
+     err.status = 404;
+     next(err);
+   } else {
+     res.render('post/post', {
+       post,
+       user: {
+         id: userId,
+         login: userLogin
+       }
+    });
+  }*/
+  #2##########################################################
+  /*models.user.findOne({
+    login
+  })
+  .then(user => {
+    models.post.find({
+      owner: user.id
+    })
+    .skip(perPage * page - perPage)
+    .limit(perPage)
+    .populate('owner')
+    .sort({ createdAt: -1 })
+    .then(posts => {
+      models.post.count({
+        owner: user.id
+      }
+      )
+      .then(count => {
+        res.render('archive/user', {
+          posts,
+          _user: user,
+          current: page,
+          pages: Math.ceil(count / perPage),
+          user: {
+            id: userId,
+            login: userLogin
+          }
+        });
+      })
+      .catch(() => {
+        throw new Error('Server Error')
+      })
+    })
+    .catch(() => {
+      throw new Error('Server Error')
+    })
+  })*/
+
+  ###888######################################
+  models.post.create({
+    title,
+    body,
+    owner: userId
+  }).then(post => {
+    console.log(post);
+    res.json({
+      ok: true
+    });
+  }).catch(err => {
+    console.log(err);
+    res.json({
+      ok: false
+    });
+  })

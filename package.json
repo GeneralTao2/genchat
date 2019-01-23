@@ -1,0 +1,50 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "GeneralTao2 <42372666+GeneralTao2@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "gulp & nodemon app.js"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0",
+    "eslint-plugin-node": "^8.0.0",
+    "gulp": "3.9.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "nodemon": "^1.18.9"
+  },
+  "engines": {
+    "node": ">=9.0.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.3",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "faker": "^4.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglifyjs": "^0.6.2",
+    "jquery": "^3.3.1",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.23.0",
+    "mongoose": "^5.4.1",
+    "mongoose-autopopulate": "^0.9.1",
+    "mongoose-url-slugs": "^1.0.2",
+    "multer": "^1.4.1",
+    "sharp": "^0.21.3",
+    "showdown": "^1.9.0",
+    "static-asset": "^0.6.0",
+    "transliter": "^2.2.1",
+    "turndown": "^5.0.1"
+  }
+}
